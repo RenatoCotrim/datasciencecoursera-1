@@ -9,5 +9,5 @@ needlables<-lables[str_detect(lables$V2,"std") | str_detect(lables$V2,"mean"), ]
 extractdata<-rawdata[,needlables$V1]
 names(extractdata) <- needlables$V2
 checkData<-sapply(extractdata,mean)
-write.table(checkData,file="output.txt",row.names=FALSE)
+write.table(checkData,file="output.txt",row.names=FALSE,col.names = F)
 print(checkData)
